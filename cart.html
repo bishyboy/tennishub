@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cart</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!--Navigation bar-->
+    <nav>
+        <!--Add a sandwich icon here-->
+        <div class="sandwich-icon-area">
+            <p onclick="openNav()"> &#9776;</p>
+        </div>
+
+        <div class="logo">
+            <a href="index.html"><img src="images/tennislogo.png" alt="Tennis Hub Logo"></a>
+        </div>
+        <h2>Tennis Hub</h2>
+        <div class="horizontal-nav">
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="racketguide.html">Racket Guide</a></li>
+                <li><a href="clearanceitems.html">Clearance Items</a></li>
+            </ul>
+        </div>
+        <div class="wishlist">
+            <a href="wishlist.html"><img src="images/wishlist.png" alt="Wishlist Icon"></a>
+        </div>
+
+        <div class="container">
+            <div class="cart">
+                <p style="font-size: 25px; font-weight: bold;" onclick='window.open("cart.html", "_self")' >
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                    </svg>
+                </p> 
+                <!--Total number of products in cart-->
+                    <span id="cart-count">0</span>   
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Your Cart</h1>
+    </header>
+
+     <!--The curtain dropdown menu-->
+<div id="myNav" class="overlay">
+    <div class="container">
+    <p class="close-icon" onclick="closeNav()"> &times; CLOSE</p>
+    <div class="overlay-content">
+        <button class="dropdown-btn">Tennis Rackets
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="wilsonrackets.html">Wilson Rackets</a>
+            <a href="headrackets.html">Head Rackets</a>
+            <a href="babolatrackets.html">Babolat Rackets</a>
+            <a href="yonexrackets.html">Yonex Rackets</a>
+        </div>
+        <button class="dropdown-btn">Tennis Balls
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="wilsonballs.html">Wilson Balls</a>
+            <a href="headballs.html">Head Balls</a>
+            <a href="babolatballs.html">Babolat Balls</a>
+        </div>
+        <button class="dropdown-btn">Bags
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="3packbags.html">3 Pack Bags</a>
+            <a href="6packbags.html">6 Pack Bags</a>
+            <a href="9-15packbags.html">9 - 15 Pack Bags</a>
+            <a href="backpacks.html">Backpacks</a>
+        </div>
+        <button class="dropdown-btn">Grips
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="overgrips.html">Overgrips</a>
+            <a href="replacementgrips.html">Replacement Grips</a>
+        </div>
+        <button class="dropdown-btn">Footwear
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="menstennisshoes.html">Men's Tennis Shoes</a>
+            <a href="womanstennisshoes.html">Woman's Tennis Shoes</a>
+            <a href="juniorshoes.html">Junior Shoes</a>
+        </div>
+        <button class="dropdown-btn">Strings
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="tennissinglesets.html">Tennis Single Sets</a>
+            <a href="tennisreels.html">Tennis Reels</a>
+        </div>
+    </div>
+</div>
+</div>
+
+    <main>
+        <div id="cart-container"></div>
+            <!-- Cart items will be dynamically added here -->
+
+            <!-- Total price -->
+            <div class="total-price-container">
+                <p class="total-price-label">Total:</p>
+                <p class="total-price-value" id="total-price">$0.00</p>
+            </div>
+
+            <!-- Checkout button -->
+            <button class="checkout-button" onclick="window.location.href='checkout.html'">Checkout</button>
+
+            <script src="cart.js"></script> <!-- Include the cart.js file -->
+    
+            <script src="productData.js"></script> <!-- Include the productData.js file -->
+            <script>
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            function renderCart() {
+                const cartContainer = document.getElementById('cart-container');
+                cartContainer.innerHTML = ''; // Clear the container
+                cart.forEach((product, index) => {
+                    const productDiv = document.createElement('div');
+                    productDiv.className = 'cart-item';
+                    productDiv.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <div>
+                            <h3>${product.name}</h3>
+                            <p>Price: ${product.price}</p>
+                            <button onclick="removeFromCart(${index})">Remove</button>
+                        </div>
+                    `;
+                    cartContainer.appendChild(productDiv);
+                });
+            }
+
+            function removeFromCart(index) {
+                cart.splice(index, 1);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                renderCart();
+                updateCartCount();
+            }
+
+            function updateCartCount() {
+                const cartCount = cart.length;
+                document.getElementById("cart-count").innerText = cartCount;
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                renderCart();
+                updateCartCount();
+            });
+            </script>
+
+            <script>
+                // Cart animation when item added
+        function animateCartCount() {
+            const cartElement = document.querySelector('.cart');
+            const cartCountElement = document.getElementById("cart-count");
+
+            // Add the flash class to both the cart and the cart count
+            cartElement.classList.add("cart-flash");
+            cartCountElement.classList.add("cart-count-flash");
+            cartCountElement.classList.add("animated");
+
+            // Clear previous animations
+            cartElement.addEventListener("animationend", () => {
+                cartElement.classList.remove("cart-flash");
+                cartCountElement.classList.remove("cart-count-flash");
+                cartCountElement.classList.remove("animated");
+            }, { once: true });
+        }
+            </script>
+       
+    </main>
+
+    <footer>
+        <div>
+            <p>2024 Tennis Hub - All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        //Here is the JavaScript code//
+        //WHen users click on "sandwich icon", open or show the curtain layer//
+        //Write the openNav() method here //
+        function openNav() {
+            document.getElementById("myNav").style.display = "block";
+        }
+        
+         //Close Nav curtain //
+         function closeNav() {
+            document.getElementById("myNav").style.display = "none";
+         }
+
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+
+        
+    </script>
+
+    
+</body>
+</html>

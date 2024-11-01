@@ -1,0 +1,11 @@
+const productData = [
+    { id: 1, name: "Yonex VCore 98 (7th Gen)", price: 409.00, image: "images/featured_item1.jpg", description: "</br>Yonex presents the Seventh Generation Yonex VCore 98 (7th Gen) </br> This racquet is a Masterpiece Of Technology and Craft.</br> </br> The Evolution Of This Iconic Racquet Combines Undeniably Precise Spin And Remarkable Control, Creating A True Work Of Art.</br></br> New Technology And Structure Combine With Innovation To Increase String Snapback And Movement, Giving Players Access To The Most Spin In Yonex Tennis History.</br></br> Yes, It Has Even More Rpms Than The Previous Model*, Producing Trajectories Your Oppponent Has Never Seen Before. </br> </br>*Compared To The 6th-Generation Vcore. Tested By Yonex." },
+    { id: 2, name: "Babolat Pure Aero Rafa 26' Junior 2021", price: 209.00, image: "images/featured_item2.jpg" },
+    { id: 3, name: "Wilson US Open - 72 Ball Carton (4 Ball Can)", price: 295.00, image: "images/featured_item3.jpg" },
+    { id: 4, name: "Asics Gel Blast FF 2 Womens", price: 209.00, image: "images/featured_item4.jpg" }
+];
+
+
+function getProductById(productId) {
+    return products.find(product => product.id === productId);
+}

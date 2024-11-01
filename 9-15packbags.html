@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>About Us</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+	<!--Navigation bar--> 
+    <nav>
+        <!--Add a sandwich icon here-->
+        <div class="sandwich-icon-area">
+            <p onclick="openNav()"> &#9776;</p>
+        </div>
+        <div class="logo">
+            <a href="index.html"> <img src="images/tennislogo.png"> </a>
+            </div>
+            <h2> Tennis Hub </h2>
+        	<div class="horizontal-nav">
+            	<ul>
+                	<li><a class="active" href="index.html">Home</a></li>
+                	<li><a href="aboutus.html">About Us</a>
+					<li><a href="contactus.html">Contact Us</a></li>
+                	<li><a href="racketguide.html">Racket Guide</a></li>
+                	<li><a href="clearanceitems.html">Clearance Items</a></li>     
+                </li>
+            </ul>
+            </div>
+            <div class="wishlist"> 
+                <a href="wishlist.html"><img src="images/wishlist.png" alt="wishlist icon"></a>
+                </div>
+                </div>
+                </div>
+            <div class="container">
+            <div class="cart">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                  </svg>
+                  <!--Total number of products in cart-->
+                  <span>0</span> 
+            </div>
+		</div>
+    </nav>
+    
+<!--The curtain dropdown menu-->
+<div id="myNav" class="overlay">
+    <div class="container">
+    <p class="close-icon" onclick="closeNav()"> &times; CLOSE</p>
+    <div class="overlay-content">
+        <button class="dropdown-btn">Tennis Rackets
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="wilsonrackets.html">Wilson Rackets</a>
+            <a href="headrackets.html">Head Rackets</a>
+            <a href="babolatrackets.html">Babolat Rackets</a>
+            <a href="yonexrackets.html">Yonex Rackets</a>
+        </div>
+        <button class="dropdown-btn">Tennis Balls
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="wilsonballs">Wilson Balls</a>
+            <a href="headballs">Head Balls</a>
+            <a href="babolatballs">Babolat Balls</a>
+        </div>
+        <button class="dropdown-btn">Bags
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="3packbags.html">3 Pack Bags</a>
+            <a href="6packbags.html">6 Pack Bags</a>
+            <a href="9-15packbags.html">9 - 15 Pack Bags</a>
+            <a href="backpacks.html">Backpacks</a>
+        </div>
+        <button class="dropdown-btn">Grips
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="overgrips.html">Overgrips</a>
+            <a href="replacementgrips.html">Replacement Grips</a>
+        </div>
+        <button class="dropdown-btn">Footwear
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="menstennisshoes.html">Men's Tennis Shoes</a>
+            <a href="womanstennisshoes.html">Woman's Tennis Shoes</a>
+            <a href="juniorshoes.html">Junior Shoes</a>
+        </div>
+        <button class="dropdown-btn">Strings
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="tennissinglesets.html">Tennis Single Sets</a>
+            <a href="tennisreels.html">Tennis Reels</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //Here is the JavaScript code//
+    //WHen users click on "sandwich icon", open or show the curtain layer//
+    //Write the openNav() method here //
+    function openNav() {
+        document.getElementById("myNav").style.display = "block";
+    }
+    
+     //Close Nav curtain //
+     function closeNav() {
+        document.getElementById("myNav").style.display = "none";
+     }
+
+     var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+
+    
+</script>
+
+ <!--Header area--> 
+ <header> 
+    <h1>9 - 15 Pack Bags</h1>     
+</header>
+
+<main>
+    <img src="images/underconstruction.jpg" alt="underconstruction" width=100%; height=100%;>
+</main>
+
+ <!--Footer Area--> 
+ <footer> 
+    <div> 
+        <p>2024 Tennis Hub All Rights Reserved</p> 
+    </div> 
+</footer>
+
+</body>
+
+</html>

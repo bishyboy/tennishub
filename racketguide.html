@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Racket Guide</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+	<!--Navigation bar--> 
+    <nav>
+        <!--Add a sandwich icon here-->
+        <div class="sandwich-icon-area">
+            <p onclick="openNav()"> &#9776;</p>
+        </div>
+        <div class="logo">
+            <a href="index.html"> <img src="images/tennislogo.png"> </a>
+            </div>
+            <h2> Tennis Hub </h2>
+        	<div class="horizontal-nav">
+            	<ul>
+                	<li><a class="active" href="index.html">Home</a></li>
+                	<li><a href="aboutus.html">About Us</a>
+					<li><a href="contactus.html">Contact Us</a></li>
+                	<li><a href="racketguide.html">Racket Guide</a></li>
+                	<li><a href="clearanceitems.html">Clearance Items</a></li>     
+                </li>
+            </ul>
+            </div>
+            <div class="wishlist"> 
+                <a href="wishlist.html"><img src="images/wishlist.png" alt="wishlist icon" onclick='window.open("wishlist.html", "_self")'></a>
+                </div>
+                </div>
+                </div>
+            <div class="container">
+            <div class="cart">
+                <p style="font-size: 25px; font-weight: bold;" onclick='window.open("cart.html", "_self")' >
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                    </svg>
+                </p>
+                  <!--Total number of products in cart-->
+                  <span id="cart-count">0</span>
+            </div>
+		</div>
+    </nav>
+    
+<!--The curtain dropdown menu-->
+<div id="myNav" class="overlay">
+    <div class="container">
+    <p class="close-icon" onclick="closeNav()"> &times; CLOSE</p>
+    <div class="overlay-content">
+        <button class="dropdown-btn">Tennis Rackets
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="wilsonrackets.html">Wilson Rackets</a>
+            <a href="headrackets.html">Head Rackets</a>
+            <a href="babolatrackets.html">Babolat Rackets</a>
+            <a href="yonexrackets.html">Yonex Rackets</a>
+        </div>
+        <button class="dropdown-btn">Tennis Balls
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="wilsonballs">Wilson Balls</a>
+            <a href="headballs">Head Balls</a>
+            <a href="babolatballs">Babolat Balls</a>
+        </div>
+        <button class="dropdown-btn">Bags
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="3packbags.html">3 Pack Bags</a>
+            <a href="6packbags.html">6 Pack Bags</a>
+            <a href="9-15packbags.html">9 - 15 Pack Bags</a>
+            <a href="backpacks.html">Backpacks</a>
+        </div>
+        <button class="dropdown-btn">Grips
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="overgrips.html">Overgrips</a>
+            <a href="replacementgrips.html">Replacement Grips</a>
+        </div>
+        <button class="dropdown-btn">Footwear
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="menstennisshoes.html">Men's Tennis Shoes</a>
+            <a href="womanstennisshoes.html">Woman's Tennis Shoes</a>
+            <a href="juniorshoes.html">Junior Shoes</a>
+        </div>
+        <button class="dropdown-btn">Strings
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="tennissinglesets.html">Tennis Single Sets</a>
+            <a href="tennisreels.html">Tennis Reels</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //Here is the JavaScript code//
+    //WHen users click on "sandwich icon", open or show the curtain layer//
+    //Write the openNav() method here //
+    function openNav() {
+        document.getElementById("myNav").style.display = "block";
+    }
+    
+     //Close Nav curtain //
+     function closeNav() {
+        document.getElementById("myNav").style.display = "none";
+     }
+
+     var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+
+    
+</script>
+
+ <!--Header area--> 
+ <header> 
+    <h1>Racket Guide</h1>     
+</header>
+
+<main class="racketguidemain">
+    <!-- Section: Types of Rackets -->
+<section class="guide-section">
+    <h2>Types of Rackets</h2></br>
+    <div class="card-container">
+        <div class="card">
+            <h3>Power Rackets</h3>
+            <p>Ideal for beginners looking to generate more power and stability.</p>
+        </div>
+        <div class="card">
+            <h3>Control Rackets</h3>
+            <p>Designed for advanced players to maximize precision and shot placement.</p>
+        </div>
+        <div class="card">
+            <h3>Hybrid Rackets</h3>
+            <p>A balanced option for intermediate players wanting both power and control.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Choosing the Right Grip Size -->
+<section class="guide-section">
+    <h2>Choosing the Right Grip Size</h2></br>
+    <p>Grip size is crucial for comfort and injury prevention. Measure your hand or use our <a href="#">grip size chart</a> for guidance.</p>
+</section>
+
+<!-- Section: String Types -->
+<section class="guide-section">
+    <h2>Racket String Types</h2></br>
+    <div class="grid">
+        <div class="grid-item">
+            <h3>Synthetic Gut</h3>
+            <p>A balanced option suitable for most players.</p>
+        </div>
+        <div class="grid-item">
+            <h3>Multifilament</h3>
+            <p>Great for players looking for comfort and power.</p>
+        </div>
+        <div class="grid-item">
+            <h3>Natural Gut</h3>
+            <p>Premium strings that provide maximum comfort and power.</p>
+        </div>
+        <div class="grid-item">
+            <h3>Polyester</h3>
+            <p>Durable strings for spin and control, ideal for advanced players.</p>
+        </div>
+    </div>
+</section>
+
+<div class="about-us-content">
+    <h2 class="racketguide-center-text"></h2>
+    <div class="racketguide-text-box">
+        <p> <h2>Choosing a Racket.</h2></br></br>
+            For most players this can be the hardest but most exciting decision they get to make in tennis. 
+            There are several areas to consider: price, head size, weight, length, balance, string pattern, power and, importantly, racket aesthetics - otherwise known as design, colour, name and brand.
+            Below we provide you with a guide on the various characteristics in an aim to help you grasp a better understanding of a racket's attributes and hopefully assist you in your racket selection.</br></br>
+            <h4>RACKET PRICE</h4>
+            Tennis Hub stocks a wide range of rackets starting with junior rackets priced from $35 through to senior rackets with the latest technology priced at $400 and above.</br></br>
+            Senior rackets fit into 1 of 3 pricing groups which are determined by the nature and number of new technologies used. Racquets containing the latest technologies are priced at the higher level. These are followed by many of your favourite tennis pro racquets, commonly known as player racquets. 
+            Lower priced rackets are a mix of older stock or your basic frames.</br></br>
+            <h4>RACKET HEAD SIZE </h4>
+            The tennis racket head size fits into 1 of 3 categories: Midsize: 93 square inches or less - Midplus: 95 to 105 square inches - Oversize: 107 square inches or greater</br></br>
+            A simple principle to follow is: the larger the head size, the greater the string elasticity, which in turn means greater power. Therefore the smaller the head size, the less power and greater the control.</br></br>
+            <h4>RACKET WEIGHT</h4>
+            An unstrung tennis racquet weight fits into 1 of 5 categories.</br></br> 
+            <ul>
+                <li>Very Light: 9 ounces or less</li>
+                <li>Light: 9.1 to 9.8 ounces</li>
+                <li>Medium: 9.9 to 10.6  ounces</li>
+                <li>Heavy: 10.7 to 11.4 ounces</li>
+                <li>Very Heavy: 11.5 ounces or more</li>
+            </ul></br>
+            The lighter the racket frame the greater the usable power and manoeuvrability. While a heavier racket results in less usable power but greater frame stability and therefore control.</br></br>
+            It is widely acknowledged that players should always try to use the heaviest racket weight that they feel comfortable with. For example Rodger Federer, Pete Sampras and Andre Agassi all used rackets heavier than 12 ounces as they assist with maintaining control in hard hitting rallies. 
+            Our advice: when possible test hit a range of rackets to find the best weight for you.</br></br>
+            <h4>RACQUET LENGTH </h4>
+            The tennis racquet length can be categorised into 1 of 4 sizes.
+            <ul>
+                <li>Standard: 27 inches</li>
+                <li>Extended: 27.25 inches</li>  
+                <li>Extended X: 27.5 inches</li>
+                <li>Extended XX: 27.5 inches or more</li>
+            </ul></br>
+            A racket's length is measured from the top of the racket head to the bottom of the grip.
+            The length will help determine the amount of force behind ball impact.</br></br>
+            Applying the simple principle of centrifugal force (where the speed of an object is greatest at its furthest central point) the longer the racket, the greater the force. 
+            The downside to a longer racquet however is less control. This is why most customers will purchase a ‘standard’ length racquet.</br></br>
+            The maximum allowable length of a racket is 29 inches. 
+            However a standard length of 27 inches has been found by players to be the ideal length to generate the best balance of power and control.</br></br>
+            
+           <h4>RACKET BALANCE</h4> 
+            The balance of a racquet can fit into 3 categories:</br></br> 
+            <ul>
+                <li>Head Light= 1 point or more</li>
+                <li>Balanced= 0 points</li>
+                <li>Head Heavy= 1 point or more.</li>
+            </ul></br></br>
+            The balance point of a racket is the distance from the end of the handle to its centre of mass. 
+            Whether a racket is balanced, Head Light or Head Heavy players will notice a dramatic impact on how the racket will swing and feel.</br></br>
+            Head Light rackets typically increase in weight as the balance becomes more head light. 
+            Preferred by professional players, such rackets are commonly referred to as ‘players rackets’ as they are generally designed to offer control and feel for players who generate their own power.
+            Head Heavy rackets typically decrease in weight as the balance becomes more head heavy. 
+            The benefits of a head heavy racket are found in its combination of manoeuvrability, stability and power off ground strokes.</br></br>
+            Advances in technology over the last few years have seen the performance level between light and heavy balanced rackets converge.  
+            What racket weighting you should use depends on the style of tennis you want to play and what racquet feel you prefer.</br></br>
+            
+            <h4>RACKET SWINGWEIGHT </h4>
+            Given recent changes in racket technologies and the convergence of head light and head heavy rackets, a racket's swing weight is probably the most important factor in gauging a racket's feel, manoeuvrability and performance. 
+            Swing weight is a measurement of weight, weight distribution and torque required to swing the racket.</br></br>
+            A high swing weight means that a racket is harder to swing at high speeds but will generate more power than a low swing weight racket when swung at the same speed.</br></br>
+            Serve volley players will generally choose a racket with a low swingweight. Inversely, baseline players will choose a high swingweight racket.</br></br>
+            
+            <h4>RACKET STRING PATTERN </h4>
+            Generally there are 3 types of string patterns to choose from:</br></br> 
+            <ul>
+                <li>Closed: 18 mains x 20 crosses </li>
+                <li>Medium: 16 mains x 19 crosses</li>
+                <li>Open: 16 mains x 18 crosses</li>
+            </ul></br>
+            The simplest way to understand what mains and crosses are is to stand a racKet on its butt cap, the vertical strings are mains and horizontal strings are the crosses. 
+            Racquets with a closed string pattern provide players with control.  
+            Open string patterns provide greater power and the ability to generate more spin.  
+            Quite simply at ball impact, an open pattern allows strings more room to flex and bite the ball, hence creating greater spin.</br></br>
+            
+            <h4>RACKET CATEGORIES</h4> 
+            Tennis rackets can be classified into 4 categories:</br></br>
+            <ul>
+                <li>Control (Player Frames)</li>
+                <li>Head size: 85 to 98 square inches </li>
+                <li>Weight: 310g or higher</li>
+                <li>String Pattern: closed, medium or open </li>
+                <li>Frame structure: thin</li>
+                <li>Frame flexibility: high</li>
+            </ul></br>
+            For players who have long, fast swing speeds. Control rackets are heavy in weight, low in power but offer good stability and ball control.</br></br>
+            
+            <p class="section-title">Tweener (Even Balance)</p>
+            <ul>
+                <li>Head size: 100 to 105 square inches or higher </li>
+                <li>Weight: 270g to 310g</li> 
+                <li>String Pattern: closed, medium or open</li> 
+                <li>Frame structure: medium</li>
+                <li>Frame flexibility: medium</li> 
+            </ul></br>
+
+            For players who have long, medium swing speeds. Tweener rackets offer a great mix of power and control. Ideal for the developing club player or juniors progressing onto full length senior rackets.</br></br>
+            
+            <p class="section-title">Player development (Head Heavy)</p>
+            <ul>
+                <li>Head size: 100 to 110 square inches or higher</li> 
+                <li>Weight: 225g to 300g</li>
+                <li>String Pattern: medium or open</li>
+                <li>Frame flexibility: stiff to medium</li>
+            </ul></br>
+
+            For players who have slow to moderate, swing speeds. Player development rackets are the perfect choice for juniors going to their first adults frame or social players who need to feel the tip of the racket. Excellent for developing good muscle memory.</br></br> 
+            
+            <p class="section-title">Player Enhancement (Head Heavy - Power)</p>
+            <ul>
+                <li>Head size: 105 square inches or higher</li> 
+                <li>Weight: 225g to 270g</li>
+                <li>String Pattern: open</li> 
+                <li>Frame structure: wide</li>
+                <li>Frame flexibility: stiff</li> 
+            </ul></br>
+
+            For players who have short, slower swing speeds. Power rackets are light in weight, high in power and are generally heady heavy.</p>
+    </br>
+        <p></p>
+    </div>
+</div>
+</main>
+
+ <!--Footer Area--> 
+ <footer> 
+    <div> 
+        <p>2024 Tennis Hub All Rights Reserved</p> 
+    </div> 
+</footer>
+
+<script src="cart.js"></script> <!-- Include the cart.js file -->    
+<script src="productData.js"></script> <!-- Include the productData.js file -->
+<script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function addToCart(productId) {
+            const product = productData.find(item => item.id === productId); // Make sure this matches your productData structure
+            if (product) {
+                cart.push(product);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartCount();
+            } else {
+                console.error("Product not found:", productId);
+            }
+        }
+
+        function updateCartCount() {
+            const cartCount = cart.length;
+            document.getElementById("cart-count").innerText = cartCount;
+        }
+
+        function showItem(productID) {
+            // Implement show item details functionality if needed
+        }
+
+        updateCartCount();  // Update cart count on page load
+    
+
+</script>
+
+
+</body>
+
+</html>

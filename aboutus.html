@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>About Us</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+	<!--Navigation bar--> 
+    <nav>
+        <!--Add a sandwich icon here-->
+        <div class="sandwich-icon-area">
+            <p onclick="openNav()"> &#9776;</p>
+        </div>
+        <div class="logo">
+            <a href="index.html"> <img src="images/tennislogo.png"> </a>
+            </div>
+            <h2> Tennis Hub </h2>
+        	<div class="horizontal-nav">
+            	<ul>
+                	<li><a class="active" href="index.html">Home</a></li>
+                	<li><a href="aboutus.html">About Us</a>
+					<li><a href="contactus.html">Contact Us</a></li>
+                	<li><a href="racketguide.html">Racket Guide</a></li>
+                	<li><a href="clearanceitems.html">Clearance Items</a></li>     
+                </li>
+            </ul>
+            </div>
+            <div class="wishlist"> 
+                <a href="wishlist.html"><img src="images/wishlist.png" alt="wishlist icon" onclick='window.open("wishlist.html", "_self")'></a>
+            </div>
+
+            <div class="container">
+            <div class="cart">
+                <p style="font-size: 25px; font-weight: bold;" onclick='window.open("cart.html", "_self")' >
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                    </svg>
+                </p>
+                  <!--Total number of products in cart-->
+                  <span id="cart-count">0</span>   
+            </div>
+		</div>
+    </nav>
+    
+<!--The curtain dropdown menu-->
+<div id="myNav" class="overlay">
+    <div class="container">
+    <p class="close-icon" onclick="closeNav()"> &times; CLOSE</p>
+    <div class="overlay-content">
+        <button class="dropdown-btn">Tennis Rackets
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="wilsonrackets.html">Wilson Rackets</a>
+            <a href="headrackets.html">Head Rackets</a>
+            <a href="babolatrackets.html">Babolat Rackets</a>
+            <a href="yonexrackets.html">Yonex Rackets</a>
+        </div>
+        <button class="dropdown-btn">Tennis Balls
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="wilsonballs.html">Wilson Balls</a>
+            <a href="headballs.html">Head Balls</a>
+            <a href="babolatballs.html">Babolat Balls</a>
+        </div>
+        <button class="dropdown-btn">Bags
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="3packbags.html">3 Pack Bags</a>
+            <a href="6packbags.html">6 Pack Bags</a>
+            <a href="9-15packbags.html">9 - 15 Pack Bags</a>
+            <a href="backpacks.html">Backpacks</a>
+        </div>
+        <button class="dropdown-btn">Grips
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="overgrips.html">Overgrips</a>
+            <a href="replacementgrips.html">Replacement Grips</a>
+        </div>
+        <button class="dropdown-btn">Footwear
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="menstennisshoes.html">Men's Tennis Shoes</a>
+            <a href="womanstennisshoes.html">Woman's Tennis Shoes</a>
+            <a href="juniorshoes.html">Junior Shoes</a>
+        </div>
+        <button class="dropdown-btn">Strings
+            <i class="fa fa-caret-down fa-xs"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="tennissinglesets.html">Tennis Single Sets</a>
+            <a href="tennisreels.html">Tennis Reels</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //Here is the JavaScript code//
+    //WHen users click on "sandwich icon", open or show the curtain layer//
+    //Write the openNav() method here //
+    function openNav() {
+        document.getElementById("myNav").style.display = "block";
+    }
+    
+     //Close Nav curtain //
+     function closeNav() {
+        document.getElementById("myNav").style.display = "none";
+     }
+
+     var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+
+    
+</script>
+
+ <!--Header area--> 
+ <header> 
+    <img src="images/tennislogo.png"> <h1> About Us</h1>     
+</header>
+
+<main>
+    <div class="about-us-content">
+        <h2 class="center-text">Welcome to Tennis Hub!</h2>
+        <div class="text-box">
+            <p>Welcome to Tennis Hub, your ultimate destination for all things tennis! </p></br> 
+            <p>Located in the heart of Taradale, we are passionate about serving the vibrant tennis community with top-notch gear and accessories.</p> 
+            <p>Whether you’re a seasoned player or just starting your tennis journey, we have everything you need to elevate your game.</p></br>
+            <p>At Tennis Hub, we understand that having the right equipment can make all the difference. That’s why we offer a carefully curated selection of tennis rackets, shoes, apparel, and accessories from leading brands.</p></br>
+            <p>Join us at Tennis Hub and discover the perfect gear to enhance your performance on the court. Together, let’s ace your tennis experience!</p></br>
+            <h3>Our Mission:</h3></br>
+                <p>Our mission is to provide high-quality tennis gear and exceptional service to players in Taradale and beyond.</p>
+                <p>We aim to support your passion for tennis and help you achieve your goals, whether you’re playing for fun or competing at the highest levels.</p></br>
+                <h3>Visit Us!</h3></br>
+                Come visit us at Tennis Hub and experience our friendly atmosphere and expert advice. We’re excited to be part of your tennis journey!</p>
+        </br>
+            <p></p>
+        </div>
+    </div>
+</main>
+
+ <!--Footer Area--> 
+ <footer> 
+    <div> 
+        <p>2024 Tennis Hub All Rights Reserved</p> 
+    </div> 
+</footer>
+
+<script src="productData.js"></script> <!-- Include the productData.js file -->
+<script src="cart.js"></script> <!-- Include the cart.js file -->
+
+</body>
+
+</html>
